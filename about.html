@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Nestium Systems</title>
+    <meta name="description" content="Learn about Fredrick Mbai and Nestium Systems — our story, mission, and values.">
+    <meta name="theme-color" content="#0e0e10">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/pageloader.css" />
+    <link rel="preload" href="egg-crack.mp3" as="audio">
+        <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Devicon Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+</head>
+
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-ring"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Page Loader -->
+    <div id="pageLoader">
+        <div class="loader-corner tl"></div>
+        <div class="loader-corner tr"></div>
+        <div class="loader-corner bl"></div>
+        <div class="loader-corner br"></div>
+        <div class="ai-matrix-loader">
+            <div class="digit">0</div>
+            <div class="digit">1</div>
+            <div class="digit">0</div>
+            <div class="digit">1</div>
+            <div class="digit">1</div>
+            <div class="digit">0</div>
+            <div class="digit">0</div>
+            <div class="digit">1</div>
+            <div class="glow"></div>
+        </div>
+        <div class="boot-text" id="bootText">
+            <span id="bootingText"></span><span class="cursor">|</span>
+        </div>
+        <div class="loader-progress-bar"></div>
+        <div class="loader-version">v2.0 · Nestium OS</div>
+    </div>
+
+  <header class="bg-charcoal text-white fixed top-0 w-full z-50 shadow-md">
+  <div class="nav-container mx-auto px-4 py-3 flex  items-center relative">
+    
+    <!-- Left Menu Button (Mobile) -->
+ <button class="md:hidden left-menu-btn text-electric focus:outline-none relative w-8 h-8">
+  <div class="left-menu-icon">
+    <span class="menu-line top-line"></span>
+    <span class="menu-line middle-line"></span>
+    <span class="menu-line bottom-line"></span>
+  </div>
+</button>
+
+
+    <!-- Left Nav Items (Desktop) -->
+    <div class="hidden md:flex items-center">
+      <a href="home.html" class="nav-link mr-2">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+    </div>
+
+    <!-- Logo Center -->
+    <div class="logo mx-2">
+      <img src="./assets/images/logo.jpeg" alt="Nestium Logo" />
+    </div>
+
+    <!-- Right Nav Items (Desktop) -->
+    <div class="hidden md:flex items-center">
+      <div class="relative group mr-2">
+        <button class="nav-link flex items-center gap-1">
+          More
+          <span class="text-electric">▾</span>
+        </button>
+        <div class="dropdown-menu hidden group-hover:flex flex-col absolute top-full mt-2 bg-charcoal border border-electric rounded-md shadow-lg min-w-[180px]">
+          <div class="dropdown-coming-soon">
+            <span class="coming-soon-icon">⚙</span>
+            Features coming soon
+          </div>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Right Menu Button (Mobile) -->
+    <button class="md:hidden right-menu-btn text-electric focus:outline-none relative w-8 h-8">
+  <div class="right-menu-icon">
+    <span class="menu-line top-line"></span>
+    <span class="menu-line middle-line"></span>
+    <span class="menu-line bottom-line"></span>
+  </div>
+</button>
+
+   <!-- ✅ Underline element -->
+    <span class="underline"></span>
+
+     <!-- Mobile Menus - moved here -->
+  <!-- Left Mobile Menu -->
+<div class="mobile-menu left-menu">
+  <div class="py-4 px-2">
+    <div class="menu-section">Navigation</div>
+    <a href="home.html" class="nav-link" aria-current="page">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+  </div>
+</div>
+
+<!-- Right Mobile Menu -->
+<div class="mobile-menu right-menu">
+  <div class="py-4 px-2">
+    <div class="menu-section">More</div>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</div>
+</div>
+</header>
+
+    <!-- Cyber-Vibe Intro -->
+    <section class="about-hero parallax" style="background-image: linear-gradient(rgba(14, 14, 16, 0.8), rgba(14, 14, 16, 0.8)), url('https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2232&auto=format&fit=crop');">
+        <div class="particle-background" id="particles-js"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">FROM NEST TO NEXT</h1>
+            <p class="hero-subtitle">Where code meets craft and curiosity sparks innovation</p>
+        </div>
+    </section>
+
+ <!-- Origin Story -->
+    <section class="timeline-section">
+        <h2 class="section-title" data-aos="fade-up">FROM SPARK TO FLAME</h2>
+        <div class="timeline-container">
+            <div class="timeline">
+                <!-- Timeline Connector -->
+                <div class="timeline-connector" data-aos="fade-in" data-aos-delay="300"></div>
+                
+                <!-- 2019 -->
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="timeline-card">
+                        <div class="timeline-year">2019</div>
+                        <div class="timeline-content">
+                            <h3>The Genesis</h3>
+                            <p>Built my first custom PC while studying computer architecture</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag" data-tooltip="Custom built gaming rig">Hardware</span>
+                                <span class="tech-tag" data-tooltip="Intel i7, GTX 1060">x86 Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-card">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <h3>First Breakthrough</h3>
+                            <p>Created PyNetMon - an automated network monitoring tool</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag" data-tooltip="Automated network scans">Python</span>
+                                <span class="tech-tag" data-tooltip="Simple Network Management Protocol">SNMP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-card">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <h3>Nestium Born</h3>
+                            <p>Launched tech blog sharing hardware/software insights</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag" data-tooltip="Technical articles and tutorials">Blogging</span>
+                                <span class="tech-tag" data-tooltip="Documenting technical processes">Technical Writing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Now -->
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-card">
+                        <div class="timeline-year">Now</div>
+                        <div class="timeline-content">
+                            <h3>Current Focus</h3>
+                            <p>Completing Computer Technology degree</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag" data-tooltip="Embedded systems programming">C++</span>
+                                <span class="tech-tag" data-tooltip="Real-Time Operating Systems">RTOS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Mission/Philosophy -->
+<section class="mission-section">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Our Core Principles</h2>
+        <p class="subtitle">The foundation of everything we build</p>
+    </div>
+    
+    <div class="mission-grid">
+        <div class="mission-card" data-aos="zoom-in">
+            <div class="card-icon">📂</div>
+            <h3>Open Source</h3>
+            <p>Believer in collaborative development and knowledge sharing</p>
+            <div class="card-footer">
+                <span class="tech-tag">GitHub</span>
+                <span class="tech-tag">Community</span>
+            </div>
+        </div>
+        
+        <div class="mission-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card-icon">🔒</div>
+            <h3>Ethical Hacking</h3>
+            <p>Security-first approach to all tech solutions</p>
+            <div class="card-footer">
+                <span class="tech-tag">Security</span>
+                <span class="tech-tag">PenTesting</span>
+            </div>
+        </div>
+        
+        <div class="mission-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card-icon">✍️</div>
+            <h3>Craft</h3>
+            <p>Every line of code is written with intention</p>
+            <div class="card-footer">
+                <span class="tech-tag">Quality</span>
+                <span class="tech-tag">Precision</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bio Section -->
+<section class="bio-section">
+    <div class="bio-container">
+        <div class="bio-image-container" data-aos="fade-right">
+            <img src="assets/images/freddy.webp" alt="Fredrick" width="800" height="800" loading="lazy" class="bio-image">
+            <div class="image-frame"></div>
+            <div class="tech-dots">
+                <div class="dot dot-1"></div>
+                <div class="dot dot-2"></div>
+                <div class="dot dot-3"></div>
+            </div>
+        </div>
+        
+        <div class="bio-content" data-aos="fade-left">
+            <h2 class="section-title">Meet the <span class="neon-text">Mind</span> Behind Nestium Systems</h2>
+            
+            <div class="typewriter-container">
+                <p id="typewriter-text" class="typewriter-text"></p>
+            </div>
+            
+            <div class="bio-description">
+                <p>Passionate about bridging the gap between hardware and software with innovative solutions. Currently specializing in Artificial Intelligence.</p>
+                
+                <div class="tech-stack">
+                    <div class="stack-category">
+                        <h4>Specialties:</h4>
+                        <div class="stack-tags">
+                            <span class="stack-tag">Software Engineering</span>
+                            <span class="stack-tag">Cybersecurity</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stack-category">
+                        <h4>Technologies:</h4>
+                        <div class="stack-tags">
+                            <span class="stack-tag">Python</span>
+                            <span class="stack-tag">html, css</span>
+                            <span class="stack-tag">JavaScript</span>
+                            <span class="stack-tag">WordPress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hidden audio element for typing sound -->
+    <audio id="typewriter-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-fast-typewriter-1123.mp3" preload="auto"></audio>
+</section>
+
+   <!-- Brand DNA -->
+<section class="brand-dna">
+    <div class="dna-container" data-aos="fade-up">
+        <h2 class="section-title">BRAND <span class="neon-text">DNA</span></h2>
+        <p class="section-subtitle">The digital essence of Nestium Systems</p>
+        
+        <div class="tech-cube-container">
+            <div class="tech-cube">
+                <div class="cube-face front" style="background-color: var(--neon);">
+                    <span>#39FF14</span>
+                </div>
+                <div class="cube-face back" style="background-color: var(--electric);">
+                    <span>#00FFFF</span>
+                </div>
+                <div class="cube-face right" style="background-color: var(--charcoal); color: white;">
+                    <span>#0E0E10</span>
+                </div>
+                <div class="cube-face left" style="background-color: var(--soft-black); color: var(--silver);">
+                    <span>#161617</span>
+                </div>
+                <div class="cube-face top" style="background: linear-gradient(45deg, var(--neon), var(--electric));">
+                    <span>Gradient</span>
+                </div>
+                <div class="cube-face bottom" style="background: repeating-linear-gradient(45deg, var(--charcoal), var(--charcoal) 2px, var(--neon) 2px, var(--neon) 4px);">
+                    <span>Pattern</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="brand-elements">
+            <div class="brand-element" data-aos="zoom-in">
+                <div class="element-icon">⚡</div>
+                <h3>Energy</h3>
+                <p>Dynamic and powerful solutions</p>
+            </div>
+            <div class="brand-element" data-aos="zoom-in" data-aos-delay="100">
+                <div class="element-icon">🔒</div>
+                <h3>Security</h3>
+                <p>Built with protection in mind</p>
+            </div>
+            <div class="brand-element" data-aos="zoom-in" data-aos-delay="200">
+                <div class="element-icon">♾️</div>
+                <h3>Innovation</h3>
+                <p>Boundless creative potential</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Join Section -->
+<section class="join-section">
+    <div class="particles-container" id="join-particles"></div>
+    <div class="join-content" data-aos="fade-up">
+        <h2 class="join-title">JOIN THE <span class="neon-text">NEST</span></h2>
+        <p class="join-subtitle">Become part of our  community</p>
+        
+        <div class="join-options">
+            <div class="join-card" data-aos="fade-right">
+                <div class="card-icon">👨‍💻</div>
+                <h3>Developers</h3>
+                <p>Contribute to open-source projects</p>
+                <button class="join-button">Code With Us</button>
+            </div>
+            
+            <div class="join-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-icon">🤝</div>
+                <h3>Partners</h3>
+                <p>Explore business collaborations</p>
+                <button class="join-button">Partner With Us</button>
+            </div>
+            
+            <div class="join-card" data-aos="fade-left" data-aos-delay="200">
+                <div class="card-icon">🎓</div>
+                <h3>Students</h3>
+                <p>Learn through internships</p>
+                <button class="join-button">Learn With Us</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">Nestium</div>
+        <p class="footer-description">
+          Orbiting the future of technology. We build digital experiences that push boundaries and redefine possibilities.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+          <a href="#" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="#" aria-label="Discord"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">UI/UX Design</a></li>
+          <li><a href="#">Cybersecurity</a></li>
+          <li><a href="#">Website &amp; App Hosting</a></li>
+          <li><a href="#">AI Integration</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <div class="footer-cta">
+          <p class="footer-cta-text">Ready to launch your project?</p>
+          <a href="https://wa.me/254117960087?text=Hello!%20I'm%20interested%20in%20Nestium%20Systems%20services.%20I'd%20like%20to%20discuss%20a%20project%20with%20you." target="_blank" rel="noopener noreferrer" class="footer-cta-button">Get in Touch</a>
+        </div>
+        <ul class="footer-links">
+          <li><a href="mailto:nestiumsystem@gmail.com">nestiumsystem@gmail.com</a></li>
+          <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+          <li>Orbit Station 42, Digital Space</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2023 Nestium Systems. All systems operational.</p>
+      <p>Made with <span style="color: var(--danger);">⚡</span> in the digital cosmos</p>
+    </div>
+</footer>
+<!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
+<div class="floating-whatsapp" data-aos="fade-left" data-aos-delay="1200">
+  <a href="https://wa.me/254117960087" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     class="whatsapp-float"
+     aria-label="Chat on WhatsApp">
+    
+    <!-- WhatsApp Icon -->
+    <div class="whatsapp-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.032 2c-5.509 0-9.977 4.468-9.977 9.977 0 1.768.468 3.476 1.346 4.971l-1.427 5.201 5.326-1.401c1.465.8 3.141 1.229 4.894 1.229 5.509 0 9.977-4.468 9.977-9.977s-4.468-9.977-9.977-9.977zm5.443 14.132c-.294.832-1.508 1.522-2.473 1.608-.626.057-1.428.103-4.164-.39-3.592-.643-6.301-3.475-6.497-6.318-.082-1.181.235-2.299.856-3.238.295-.458.674-.798 1.145-1.017.419-.197.935-.157 1.285.142.35.3.487.74.605 1.171.118.43.236.861.27 1.309.035.448-.024.913-.299 1.297-.275.385-.676.65-1.007 1.011-.331.361.071.896.496 1.227 1.207.94 2.684 1.38 4.189 1.569.295.037.59.073.885.073.498 0 .996-.052 1.494-.169.498-.118.944-.385 1.322-.726.379-.341.669-.76.865-1.238.196-.478.246-.997.196-1.515h-.001z"/>
+      </svg>
+    </div>
+    
+    <!-- Pulsing Ring Effect -->
+    <div class="whatsapp-pulse-ring"></div>
+    <div class="whatsapp-pulse-ring delay-1"></div>
+    
+    <!-- Tooltip/Bubble -->
+    <div class="whatsapp-tooltip">
+      <span>Chat with me</span>
+      <div class="tooltip-arrow"></div>
+    </div>
+    
+    <!-- Status Indicator -->
+    <div class="whatsapp-status">
+      <span class="status-dot"></span>
+      <span class="status-text">Online</span>
+    </div>
+  </a>
+</div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js"></script>
+  <script src="assets/js/global.js" defer></script>
+  <script src="assets/js/about.js" defer></script>
+  <script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/pageloader.js" defer></script>
+ 
+</body>
+</html>

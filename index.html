@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nestium Systems</title>
+
+  <!-- Prevent search engines from indexing the intro page -->
+  <meta name="robots" content="noindex">
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Devicon Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Loader Container (unchanged) -->
+  <div class="loader-container" id="loader">
+    <div class="light-effect"></div>
+
+    <div class="eyes-wrapper" id="eyesWrapper">
+      <div class="eye">
+        <div class="pupil" id="pupil-left"></div>
+      </div>
+      <div class="eye">
+        <div class="pupil" id="pupil-right"></div>
+      </div>
+    </div>
+
+    <div class="bulb-thread-container">
+      <div class="bulb-thread"></div>
+    </div>
+
+    <div class="bulb-container">
+      <svg class="bulb" viewBox="0 0 100 150">
+        <path class="bulb-glass" d="M50,10 
+          Q30,10 20,25
+          Q10,40 10,60
+          Q10,80 20,95
+          Q30,110 50,110
+          Q70,110 80,95
+          Q90,80 90,60
+          Q90,40 80,25
+          Q70,10 50,10
+          Z" />
+        <path class="bulb-filament bulb-glow" d="M50,30 L50,50 M40,40 L60,40" />
+        <rect class="bulb-base" x="35" y="110" width="30" height="20" rx="2" />
+        <rect class="bulb-thread-metal" x="45" y="130" width="10" height="10" rx="1" />
+        <circle class="bulb-glow" cx="50" cy="60" r="40" fill="url(#bulbGradient)" />
+        <defs>
+          <radialGradient id="bulbGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#39FF14" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#39FF14" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="logo-name">
+      <div class="name">NESTIUM SYSTEMS</div>
+      <div class="name"><i>powered by Fredrick Mbai</i></div>
+    </div>
+
+    <div class="boot-text" id="bootText">
+      <span id="bootingText"></span><span class="cursor">|</span>
+    </div>
+  </div>
+
+  <!-- Script: redirect logic -->
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

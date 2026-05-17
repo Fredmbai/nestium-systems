@@ -1,0 +1,235 @@
+/* =====================================================
+   PAGE LOADER — Nestium Systems
+   Premium boot sequence loader
+   ===================================================== */
+
+#pageLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #09090b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ambient background glow */
+#pageLoader::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.05) 0%, transparent 65%);
+  animation: ambientPulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ambientPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* ======= MATRIX GRID ======= */
+.ai-matrix-loader {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 44px;
+  z-index: 1;
+}
+
+/* Matrix digits */
+.digit {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 255, 0, 0.06);
+  color: #39ff14;
+  font-family: 'Courier New', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 0 16px rgba(57, 255, 20, 0.25), inset 0 0 8px rgba(57, 255, 20, 0.04);
+  border: 1px solid rgba(57, 255, 20, 0.15);
+  animation: digitPulse 2.4s ease-in-out infinite;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.digit:nth-child(1)  { animation-delay: 0.0s; }
+.digit:nth-child(2)  { animation-delay: 0.3s; }
+.digit:nth-child(3)  { animation-delay: 0.6s; }
+.digit:nth-child(4)  { animation-delay: 0.9s; }
+.digit:nth-child(5)  { animation-delay: 0.2s; }
+.digit:nth-child(6)  { animation-delay: 0.5s; }
+.digit:nth-child(7)  { animation-delay: 0.8s; }
+.digit:nth-child(8)  { animation-delay: 1.1s; }
+
+@keyframes digitPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.95);
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.15);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.45), inset 0 0 10px rgba(57, 255, 20, 0.08);
+  }
+}
+
+/* Glowing aura */
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 170%;
+  height: 170%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(57, 255, 20, 0.18) 0%, transparent 65%);
+  filter: blur(24px);
+  animation: auraRotate 14s linear infinite;
+  z-index: 0;
+}
+
+@keyframes auraRotate {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ======= BOOT TEXT ======= */
+.boot-text {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  color: #39ff14;
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.7), 0 0 20px rgba(57, 255, 20, 0.3);
+  margin-top: 8px;
+  max-width: 420px;
+  text-align: center;
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.04em;
+}
+
+/* Blinking cursor */
+.cursor {
+  animation: cursorBlink 1s step-start infinite;
+  color: #00ffff;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ======= PROGRESS BAR ======= */
+.loader-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #39ff14, #00ffff, #39ff14);
+  background-size: 200% 100%;
+  box-shadow: 0 0 12px #39ff14, 0 0 24px rgba(0, 255, 255, 0.4);
+  animation: loaderBarFill 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+             barShimmer 1.5s linear infinite;
+  z-index: 3;
+  border-radius: 0 2px 0 0;
+}
+
+@keyframes loaderBarFill {
+  0%   { width: 0%; }
+  20%  { width: 28%; }
+  50%  { width: 62%; }
+  80%  { width: 85%; }
+  100% { width: 100%; }
+}
+
+@keyframes barShimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ======= VERSION BADGE ======= */
+.loader-version {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.65rem;
+  color: rgba(0, 255, 255, 0.35);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+/* ======= SCAN LINE EFFECT ======= */
+#pageLoader::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+  animation: scanLines 8s linear infinite;
+}
+
+@keyframes scanLines {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 40px; }
+}
+
+/* ======= CORNER ACCENTS ======= */
+.loader-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+}
+
+.loader-corner.tl {
+  top: 12px;
+  left: 12px;
+  border-top: 2px solid #00ffff;
+  border-left: 2px solid #00ffff;
+}
+
+.loader-corner.tr {
+  top: 12px;
+  right: 12px;
+  border-top: 2px solid #00ffff;
+  border-right: 2px solid #00ffff;
+}
+
+.loader-corner.bl {
+  bottom: 12px;
+  left: 12px;
+  border-bottom: 2px solid #00ffff;
+  border-left: 2px solid #00ffff;
+}
+
+.loader-corner.br {
+  bottom: 12px;
+  right: 12px;
+  border-bottom: 2px solid #00ffff;
+  border-right: 2px solid #00ffff;
+}

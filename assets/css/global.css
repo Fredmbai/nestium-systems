@@ -1,0 +1,647 @@
+/* =====================================================
+   GLOBAL.CSS — Nestium Systems
+   Shared UI/UX enhancements across all pages
+   ===================================================== */
+
+/* ======= EXTENDED DESIGN TOKENS ======= */
+:root {
+  --neon: #39ff14;
+  --neon-dim: rgba(57, 255, 20, 0.35);
+  --neon-glow: 0 0 12px rgba(57, 255, 20, 0.65), 0 0 32px rgba(57, 255, 20, 0.28);
+  --electric: #00ffff;
+  --electric-dim: rgba(0, 255, 255, 0.35);
+  --electric-glow: 0 0 12px rgba(0, 255, 255, 0.65), 0 0 32px rgba(0, 255, 255, 0.28);
+  --charcoal: #0e0e10;
+  --soft-black: #161617;
+  --surface: #1a1a1c;
+  --surface-2: #202023;
+  --silver: #c0c0c0;
+  --silver-dim: rgba(192, 192, 192, 0.55);
+  --danger: #ff3c38;
+  --orbitron: 'Orbitron', sans-serif;
+  --inter: 'Inter', sans-serif;
+
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --border-neon: 1px solid rgba(57, 255, 20, 0.28);
+  --border-electric: 1px solid rgba(0, 255, 255, 0.28);
+  --border-glass: 1px solid rgba(255, 255, 255, 0.07);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+/* ======= FONT IMPROVEMENTS ======= */
+/* Body text → Inter for readability; headings keep Orbitron */
+body {
+  font-family: var(--inter), sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.nav-link,
+.wwd-title,
+.ecosystem-title,
+.projects-title,
+.cta-title,
+.footer-logo,
+.footer-heading,
+.central-node,
+.service-title,
+.stat-number,
+.section-title,
+.cta-button,
+.hero-content h2,
+.hero-content button,
+.about-text h2,
+.projects-title,
+.boot-text {
+  font-family: var(--orbitron), sans-serif !important;
+}
+
+p, li, a:not(.nav-link), span:not(.stat-number),
+.hero-content p,
+.about-text p,
+.footer-description,
+.footer-links a,
+.ecosystem-subtitle,
+.projects-subtitle {
+  font-family: var(--inter), sans-serif !important;
+}
+
+/* ======= PAGE EXIT TRANSITION ======= */
+/* NOTE: NO transform or opacity on body at load — transforms on body break
+   position:fixed children (cursor, loader, header, scroll bar) by making
+   body their containing block instead of the viewport. The page loader
+   already handles the entrance effect. */
+
+body.page-exit {
+  opacity: 0 !important;
+  transition: opacity 0.25s ease !important;
+}
+
+/* ======= SCROLL PROGRESS BAR ======= */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--neon), var(--electric), var(--neon));
+  background-size: 300% 100%;
+  animation: progressGradient 3s linear infinite;
+  z-index: 10001;
+  transition: width 0.08s linear;
+  box-shadow: 0 0 10px var(--electric), 0 0 20px rgba(57, 255, 20, 0.4);
+  border-radius: 0 2px 2px 0;
+}
+
+@keyframes progressGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* ======= CUSTOM SCROLLBAR ======= */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--charcoal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon), var(--electric));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--electric), var(--neon));
+  box-shadow: 0 0 8px var(--electric);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--electric) #111;
+}
+
+/* ======= TEXT SELECTION ======= */
+::selection {
+  background: rgba(57, 255, 20, 0.22);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(57, 255, 20, 0.22);
+  color: #fff;
+}
+
+/* ======= FOCUS STYLES ======= */
+*:focus-visible {
+  outline: 2px solid var(--electric);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ======= HEADER SCROLL BEHAVIOR ======= */
+header {
+  transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease !important;
+}
+
+header.scrolled {
+  background: rgba(14, 14, 16, 0.96) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  box-shadow: 0 1px 0 rgba(0, 255, 255, 0.12), 0 4px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ======= NAV ACTIVE — REMOVE DOUBLE UNDERLINE ======= */
+/* The animated .underline span in the nav handles the underline;
+   remove the CSS border-bottom that was creating a duplicate. */
+.nav-link.active {
+  border-bottom: none !important;
+}
+
+/* ======= NAV UNDERLINE — POSITION FIX (all pages) ======= */
+/* Override every page CSS's hardcoded bottom:20px.
+   JS sets 'top' dynamically to sit just below each link. */
+.nav-container .underline {
+  top: 0 !important;
+  bottom: auto !important;
+  height: 2px !important;
+  opacity: 0;
+  background: linear-gradient(90deg, var(--electric), var(--neon)) !important;
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.5) !important;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease !important;
+}
+
+/* ======= CUSTOM CURSOR (desktop only) ======= */
+@media (hover: hover) and (pointer: fine) {
+  * { cursor: none !important; }
+
+  /* Start hidden; JS adds .cursor-active once mouse has moved */
+  .cursor-ring,
+  .cursor-dot {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .cursor-ring {
+    /* Use will-change to isolate from page stacking contexts */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid var(--electric);
+    border-radius: 50%;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease,
+                background 0.2s ease, opacity 0.3s ease;
+    /* NO mix-blend-mode — it makes cursor invisible on dark backgrounds */
+    will-change: transform;
+  }
+
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background: var(--neon);
+    border-radius: 50%;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    box-shadow: 0 0 8px var(--neon), 0 0 14px rgba(57, 255, 20, 0.4);
+    will-change: transform;
+  }
+
+  /* Show cursor once JS has initialized it */
+  .cursor-ring.cursor-active,
+  .cursor-dot.cursor-active {
+    opacity: 1;
+  }
+
+  .cursor-ring.hovering {
+    width: 50px;
+    height: 50px;
+    border-color: var(--neon);
+    border-width: 1.5px;
+    background: rgba(57, 255, 20, 0.06);
+  }
+
+  .cursor-ring.clicking {
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 255, 255, 0.12);
+    border-color: var(--electric);
+  }
+}
+
+/* ======= DROPDOWN COMING SOON (shared across all pages) ======= */
+.dropdown-coming-soon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.2rem;
+  color: rgba(192, 192, 192, 0.5);
+  font-family: var(--orbitron), sans-serif !important;
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  cursor: default;
+  user-select: none;
+}
+
+.coming-soon-icon {
+  font-size: 0.85rem;
+  opacity: 0.55;
+  animation: spinGear 7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spinGear {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ======= ENHANCED BUTTONS ======= */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 2.2rem;
+  background: var(--neon);
+  color: #0a0a0a;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--orbitron), sans-serif !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+  box-shadow: 0 0 16px rgba(57, 255, 20, 0.4), 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.7), 0 8px 25px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover::after { opacity: 1; }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 2.2rem;
+  background: transparent;
+  color: var(--electric);
+  border: 1px solid var(--electric);
+  border-radius: var(--radius-sm);
+  font-family: var(--orbitron), sans-serif !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--electric);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-smooth);
+  z-index: -1;
+}
+
+.btn-outline:hover {
+  color: #0a0a0a;
+  box-shadow: 0 0 24px rgba(0, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-outline:hover::before { transform: scaleX(1); }
+
+/* ======= GLASS CARD COMPONENT ======= */
+.glass-card {
+  background: rgba(22, 22, 23, 0.65);
+  border: var(--border-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-smooth);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 255, 255, 0.18);
+  transform: translateY(-5px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35), 0 0 24px rgba(0, 255, 255, 0.08);
+}
+
+/* ======= GRADIENT TEXT ======= */
+.gradient-text {
+  background: linear-gradient(135deg, var(--neon) 0%, var(--electric) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ======= ANIMATED BORDER ======= */
+.animated-border {
+  position: relative;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--neon), var(--electric), var(--neon));
+  background-size: 300% 100%;
+  animation: borderFlow 4s linear infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+
+.animated-border:hover::before { opacity: 1; }
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* ======= STATS SECTION ======= */
+.stats-section {
+  padding: 5rem 2rem;
+  background: var(--soft-black);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(57, 255, 20, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(0, 255, 255, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.stats-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--electric), transparent);
+  opacity: 0.35;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 3rem;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-item {
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius-md);
+  border: var(--border-glass);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all var(--transition-smooth);
+}
+
+.stat-item:hover {
+  border-color: rgba(57, 255, 20, 0.2);
+  background: rgba(57, 255, 20, 0.04);
+  transform: translateY(-4px);
+}
+
+.stat-number {
+  font-family: var(--orbitron), sans-serif !important;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--neon);
+  text-shadow: var(--neon-glow);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.stat-label {
+  font-family: var(--inter), sans-serif !important;
+  font-size: 0.78rem;
+  color: var(--silver-dim);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ======= SECTION DIVIDER ======= */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.35), transparent);
+  border: none;
+  margin: 0;
+}
+
+/* ======= TOOLTIP IMPROVEMENTS ======= */
+.tooltip,
+.social-icon .tooltip {
+  font-family: var(--inter), sans-serif !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* ======= LOADING BAR ON PAGE LOADER ======= */
+#pageLoader {
+  position: relative;
+}
+
+.loader-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon), var(--electric));
+  box-shadow: 0 0 10px var(--neon);
+  animation: loaderBarFill 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  z-index: 1;
+}
+
+@keyframes loaderBarFill {
+  0%   { width: 0%; opacity: 1; }
+  25%  { width: 35%; }
+  60%  { width: 68%; }
+  85%  { width: 88%; }
+  100% { width: 100%; }
+}
+
+.loader-version {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  color: rgba(0, 255, 0, 0.45);
+  letter-spacing: 0.1em;
+}
+
+/* ======= IMPROVED MOBILE NAV ======= */
+.mobile-menu {
+  background: linear-gradient(180deg, rgba(10, 10, 12, 0.98), rgba(14, 14, 16, 0.98)) !important;
+  border-right: 1px solid rgba(0, 255, 255, 0.15) !important;
+  box-shadow: 8px 0 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+.right-menu {
+  border-right: none !important;
+  border-left: 1px solid rgba(0, 255, 255, 0.15) !important;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+.menu-section {
+  font-family: var(--inter), sans-serif !important;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(0, 255, 255, 0.45);
+  padding: 1rem 2rem 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  margin-bottom: 0.5rem;
+}
+
+/* ======= FOOTER IMPROVEMENTS ======= */
+.footer-bottom {
+  font-family: var(--inter), sans-serif !important;
+  font-size: 0.82rem;
+}
+
+.footer-links a, .footer-description {
+  font-family: var(--inter), sans-serif !important;
+}
+
+/* ======= ECOSYSTEM & CARDS body text ======= */
+.wwd-content p,
+.face p,
+.project-card p,
+.card-front-2-0 p,
+.card-back-2-0 ul li,
+.cta-subtitle,
+.whatsapp-tooltip span {
+  font-family: var(--inter), sans-serif !important;
+}
+
+/* ======= ORBIT TOOLTIP ======= */
+.orbit-item .tooltip {
+  font-family: var(--inter), sans-serif !important;
+  font-size: 0.72rem;
+  background: rgba(10, 10, 14, 0.92);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* ======= CARD HOVER POLISH ======= */
+.project-card-2-0:hover .card-front-2-0 {
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
+}
+
+/* ======= LINK TRANSITIONS ======= */
+a {
+  transition: color var(--transition-fast);
+}
+
+/* ======= PREFERS REDUCED MOTION ======= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  [data-aos] {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  #scroll-progress,
+  .cursor-ring,
+  .cursor-dot {
+    display: none !important;
+  }
+}
+
+/* ======= SUBTLE NOISE TEXTURE ======= */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.65;
+}
+
+/* ======= THEME COLOR META (styled scrollbar for mobile) ======= */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3.5rem 1.2rem;
+  }
+}

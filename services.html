@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Nestium Systems</title>
+  <meta name="description" content="Premium development services from Nestium Systems — web dev, cybersecurity, AI integration, and more.">
+  <meta name="theme-color" content="#0e0e10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/services.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/pageloader.css" />
+      <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Devicon Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Page Loader -->
+  <div id="pageLoader">
+      <div class="loader-corner tl"></div>
+      <div class="loader-corner tr"></div>
+      <div class="loader-corner bl"></div>
+      <div class="loader-corner br"></div>
+      <div class="ai-matrix-loader">
+          <div class="digit">0</div>
+          <div class="digit">1</div>
+          <div class="digit">0</div>
+          <div class="digit">1</div>
+          <div class="digit">1</div>
+          <div class="digit">0</div>
+          <div class="digit">0</div>
+          <div class="digit">1</div>
+          <div class="glow"></div>
+      </div>
+      <div class="boot-text" id="bootText">
+          <span id="bootingText"></span><span class="cursor">|</span>
+      </div>
+      <div class="loader-progress-bar"></div>
+      <div class="loader-version">v2.0 · Nestium OS</div>
+  </div>
+
+  <header class="bg-charcoal text-white fixed top-0 w-full z-50 shadow-md">
+  <div class="nav-container mx-auto px-4 py-3 flex  items-center relative">
+    
+    <!-- Left Menu Button (Mobile) -->
+ <button class="md:hidden left-menu-btn text-electric focus:outline-none relative w-8 h-8">
+  <div class="left-menu-icon">
+    <span class="menu-line top-line"></span>
+    <span class="menu-line middle-line"></span>
+    <span class="menu-line bottom-line"></span>
+  </div>
+</button>
+
+
+    <!-- Left Nav Items (Desktop) -->
+    <div class="hidden md:flex items-center">
+      <a href="home.html" class="nav-link mr-2">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+    </div>
+
+    <!-- Logo Center -->
+    <div class="logo mx-2">
+      <img src="./assets/images/logo.jpeg" alt="Nestium Systems Logo" />
+    </div>
+
+    <!-- Right Nav Items (Desktop) -->
+    <div class="hidden md:flex items-center">
+      <div class="relative group mr-2">
+        <button class="nav-link flex items-center gap-1">
+          More
+          <span class="text-electric">▾</span>
+        </button>
+        <div class="dropdown-menu hidden group-hover:flex flex-col absolute top-full mt-2 bg-charcoal border border-electric rounded-md shadow-lg min-w-[180px]">
+          <div class="dropdown-coming-soon">
+            <span class="coming-soon-icon">⚙</span>
+            Features coming soon
+          </div>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Right Menu Button (Mobile) -->
+    <button class="md:hidden right-menu-btn text-electric focus:outline-none relative w-8 h-8">
+  <div class="right-menu-icon">
+    <span class="menu-line top-line"></span>
+    <span class="menu-line middle-line"></span>
+    <span class="menu-line bottom-line"></span>
+  </div>
+</button>
+
+   <!-- ✅ Underline element -->
+    <span class="underline"></span>
+
+     <!-- Mobile Menus - moved here -->
+  <!-- Left Mobile Menu -->
+<div class="mobile-menu left-menu">
+  <div class="py-4 px-2">
+    <div class="menu-section">Navigation</div>
+    <a href="home.html" class="nav-link" aria-current="page">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+  </div>
+</div>
+
+<!-- Right Mobile Menu -->
+<div class="mobile-menu right-menu">
+  <div class="py-4 px-2">
+    <div class="menu-section">More</div>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</div>
+</div>
+</header>
+
+<!-- Hero Banner -->
+<section class="hero-banner">
+  <!-- Circuit background pattern -->
+  <div class="circuit-pattern" data-aos="fade-in" data-aos-delay="300"></div>
+  
+  <!-- Hero content container -->
+  <div class="hero-container">
+    <!-- Text content on left -->
+    <div class="hero-content" data-aos="fade-right">
+      <h1><span>Code-crafted</span> solutions that fly</h1>
+      <p>Precision-engineered digital experiences that elevate your business beyond the competition</p>
+    </div>
+    
+    <!-- Flying bird on right -->
+    <div class="flying-bird" data-aos="fade-left" data-aos-delay="500">
+      <img src="assets/images/bird.png" alt="Flying bird illustration" class="parallax-element" data-speed="0.2">
+    </div>
+  </div>
+  
+  <!-- Animated scroll indicator -->
+  <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="800">
+    <div class="mouse">
+      <div class="scroller"></div>
+    </div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+  <!-- Our Expertise / Services Grid -->
+<section class="services-section">
+  <div class="svc-bg-grid"></div>
+
+  <div class="svc-header" data-aos="fade-up">
+    <span class="svc-eyebrow">// OUR EXPERTISE</span>
+    <h2 class="section-title" data-aos="neon-glow" data-aos-delay="100">What We <span>Offer</span></h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Hover a card to see what's inside</p>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- ── Card 1: Web Development ── -->
+    <div class="service-card svc-card--web" data-aos="fade-up" data-aos-delay="100">
+      <div class="card-inner">
+        <!-- Front -->
+        <div class="card-front">
+          <div class="svc-card-num">01</div>
+          <div class="service-icon svc-icon--web">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3>Web Development</h3>
+          <p>Pixel-perfect, responsive websites and web apps built for performance, SEO, and conversions.</p>
+          <span class="svc-hint">Hover to explore →</span>
+          <div class="svc-front-glow"></div>
+        </div>
+        <!-- Back -->
+        <div class="card-back svc-back--web">
+          <div class="svc-back-accent"></div>
+          <div class="svc-back-header">
+            <div class="svc-back-icon svc-icon--web">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h3>Web Development</h3>
+              <span class="svc-back-cat">Websites &amp; Web Apps</span>
+            </div>
+          </div>
+          <ul class="service-features">
+            <li>Custom Websites &amp; Web Portals</li>
+            <li>React / Django / Full-Stack Apps</li>
+            <li>Website &amp; App Hosting</li>
+            <li>SEO &amp; Core Web Vitals Optimization</li>
+            <li>CMS Integration &amp; Maintenance</li>
+          </ul>
+          <div class="svc-stack-row">
+            <span>React</span><span>Django</span><span>Tailwind</span><span>HTML/CSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 2: App Development ── -->
+    <div class="service-card svc-card--app" data-aos="fade-up" data-aos-delay="200">
+      <div class="card-inner">
+        <!-- Front -->
+        <div class="card-front">
+          <div class="svc-card-num">02</div>
+          <div class="service-icon svc-icon--app">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+              <line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+          </div>
+          <h3>App Development</h3>
+          <p>Cross-platform mobile apps for iOS &amp; Android — from concept to app store launch.</p>
+          <span class="svc-hint">Hover to explore →</span>
+          <div class="svc-front-glow"></div>
+        </div>
+        <!-- Back -->
+        <div class="card-back svc-back--app">
+          <div class="svc-back-accent"></div>
+          <div class="svc-back-header">
+            <div class="svc-back-icon svc-icon--app">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <div>
+              <h3>App Development</h3>
+              <span class="svc-back-cat">iOS &amp; Android</span>
+            </div>
+          </div>
+          <ul class="service-features">
+            <li>React Native / Flutter Applications</li>
+            <li>REST API &amp; Backend Integration</li>
+            <li>App Hosting &amp; Cloud Deployment</li>
+            <li>Push Notifications &amp; Auth</li>
+            <li>App Store &amp; Play Store Launch</li>
+          </ul>
+          <div class="svc-stack-row">
+            <span>React Native</span><span>Django</span><span>Firebase</span><span>REST API</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 3: AI & Machine Learning ── -->
+    <div class="service-card svc-card--ai" data-aos="fade-up" data-aos-delay="300">
+      <div class="card-inner">
+        <!-- Front -->
+        <div class="card-front">
+          <div class="svc-card-num">03</div>
+          <div class="service-icon svc-icon--ai">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.96-3 2.5 2.5 0 0 1-2.04-5c.13-.27.29-.52.47-.76"/>
+              <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.96-3 2.5 2.5 0 0 0 2.04-5c-.13-.27-.29-.52-.47-.76"/>
+            </svg>
+          </div>
+          <h3>AI &amp; Machine Learning</h3>
+          <p>Intelligent systems that learn from data, see through cameras, and automate complex decisions.</p>
+          <span class="svc-hint">Hover to explore →</span>
+          <div class="svc-front-glow"></div>
+        </div>
+        <!-- Back -->
+        <div class="card-back svc-back--ai">
+          <div class="svc-back-accent"></div>
+          <div class="svc-back-header">
+            <div class="svc-back-icon svc-icon--ai">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.96-3 2.5 2.5 0 0 1-2.04-5c.13-.27.29-.52.47-.76"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.96-3 2.5 2.5 0 0 0 2.04-5c-.13-.27-.29-.52-.47-.76"/></svg>
+            </div>
+            <div>
+              <h3>AI &amp; Machine Learning</h3>
+              <span class="svc-back-cat">Intelligent Systems</span>
+            </div>
+          </div>
+          <ul class="service-features">
+            <li>Custom AI Model Training</li>
+            <li>Computer Vision (OpenCV)</li>
+            <li>NLP, Chatbots &amp; Voice AI</li>
+            <li>Predictive Analytics</li>
+            <li>IoT Sensor Intelligence</li>
+          </ul>
+          <div class="svc-stack-row">
+            <span>Python</span><span>TensorFlow</span><span>OpenCV</span><span>Django</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 4: Cybersecurity ── -->
+    <div class="service-card svc-card--cyber" data-aos="fade-up" data-aos-delay="400">
+      <div class="card-inner">
+        <!-- Front -->
+        <div class="card-front">
+          <div class="svc-card-num">04</div>
+          <div class="service-icon svc-icon--cyber">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3>Cybersecurity</h3>
+          <p>We find vulnerabilities before attackers do — auditing, testing, and hardening your digital assets.</p>
+          <span class="svc-hint">Hover to explore →</span>
+          <div class="svc-front-glow"></div>
+        </div>
+        <!-- Back -->
+        <div class="card-back svc-back--cyber">
+          <div class="svc-back-accent"></div>
+          <div class="svc-back-header">
+            <div class="svc-back-icon svc-icon--cyber">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <div>
+              <h3>Cybersecurity</h3>
+              <span class="svc-back-cat">Offense &amp; Defense</span>
+            </div>
+          </div>
+          <ul class="service-features">
+            <li>Penetration Testing</li>
+            <li>Bug Bounty Hunting</li>
+            <li>System Security Audits</li>
+            <li>Threat Intelligence &amp; Reports</li>
+            <li>Security Training &amp; Hardening</li>
+          </ul>
+          <div class="svc-stack-row">
+            <span>Linux</span><span>Kali</span><span>Python</span><span>CTF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Full Development Lifecycle -->
+  <section class="dev-lifecycle" data-aos="fade-up">
+    <div class="lifecycle-header">
+      <span class="lifecycle-eyebrow">// HOW WE WORK</span>
+      <h2 class="section-title">Our <span class="neon-text">Full Lifecycle</span> Approach</h2>
+      <p class="section-subtitle">From your first idea to live deployment and beyond — we handle every stage.</p>
+    </div>
+    <div class="lifecycle-steps">
+      <div class="lc-step" data-aos="fade-up" data-aos-delay="50">
+        <div class="lc-num">01</div>
+        <div class="lc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h4>Problem Definition</h4>
+        <p>We listen and define the exact problem to solve — goals, constraints, and success criteria.</p>
+      </div>
+      <div class="lc-arrow">→</div>
+      <div class="lc-step" data-aos="fade-up" data-aos-delay="100">
+        <div class="lc-num">02</div>
+        <div class="lc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h4>Analysis &amp; Design</h4>
+        <p>System architecture, wireframes, and tech-stack planning — all reviewed with you before a line is written.</p>
+      </div>
+      <div class="lc-arrow">→</div>
+      <div class="lc-step" data-aos="fade-up" data-aos-delay="150">
+        <div class="lc-num">03</div>
+        <div class="lc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h4>Development</h4>
+        <p>Clean, tested, production-grade code. Regular progress updates so nothing surprises you at the end.</p>
+      </div>
+      <div class="lc-arrow">→</div>
+      <div class="lc-step" data-aos="fade-up" data-aos-delay="200">
+        <div class="lc-num">04</div>
+        <div class="lc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h4>Testing</h4>
+        <p>Unit, integration, and user-acceptance tests. Security checks. We don't ship broken things.</p>
+      </div>
+      <div class="lc-arrow">→</div>
+      <div class="lc-step" data-aos="fade-up" data-aos-delay="250">
+        <div class="lc-num">05</div>
+        <div class="lc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h4>Deployment</h4>
+        <p>Hosted, live, and monitored. We handle servers, domains, SSL, and CI/CD pipelines end-to-end.</p>
+      </div>
+      <div class="lc-arrow">→</div>
+      <div class="lc-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="lc-num">06</div>
+        <div class="lc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h4>Maintenance</h4>
+        <p>Ongoing updates, bug fixes, performance monitoring, and feature additions — we stay with you post-launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Nestium Systems -->
+  <section class="why-choose">
+    <h2 class="section-title" data-aos="fade-up">Why <span>Nestium Systems</span>?</h2>
+    
+    <div class="pillars-container">
+      <!-- Pillar 1 -->
+      <div class="pillar" data-aos="fade-up" data-aos-delay="100">
+        <div class="pillar-number">1</div>
+        <h3>Innovation</h3>
+        <p>We don't just follow trends - we set them. Our solutions incorporate cutting-edge technologies tailored to your needs.</p>
+      </div>
+      
+      <!-- Pillar 2 -->
+      <div class="pillar" data-aos="fade-up" data-aos-delay="200">
+        <div class="pillar-number">2</div>
+        <h3>Precision</h3>
+        <p>Pixel-perfect implementation with meticulous attention to detail in every line of code and design element.</p>
+      </div>
+      
+      <!-- Pillar 3 -->
+      <div class="pillar" data-aos="fade-up" data-aos-delay="300">
+        <div class="pillar-number">3</div>
+        <h3>Security</h3>
+        <p>Enterprise-grade security built into every layer of our solutions, protecting your data and your customers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="lottie-animation"></div>
+    <div class="cta-content" data-aos="fade-up">
+      <h2 class="cta-title">Ready to <span>elevate</span> your digital presence?</h2>
+      <p class="cta-subtitle">Let's create something extraordinary together. Our team is ready to bring your vision to life.</p>
+      <a href="https://wa.me/254117960087?text=Hello!%20I'm%20interested%20in%20Nestium%20Systems%20services.%20I'd%20like%20to%20discuss%20a%20project%20with%20you." target="_blank" rel="noopener noreferrer" class="cta-button">Let's Work Together</a>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">NESTIUM SYSTEMS</div>
+        <p class="footer-description">
+          Orbiting the future of technology. We build digital experiences that push boundaries and redefine possibilities.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+          <a href="#" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="#" aria-label="Discord"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">UI/UX Design</a></li>
+          <li><a href="#">Cybersecurity</a></li>
+          <li><a href="#">Website &amp; App Hosting</a></li>
+          <li><a href="#">AI Integration</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <div class="footer-cta">
+          <p class="footer-cta-text">Ready to launch your project?</p>
+          <a href="https://wa.me/254117960087?text=Hello!%20I'm%20interested%20in%20Nestium%20Systems%20services.%20I'd%20like%20to%20discuss%20a%20project%20with%20you." target="_blank" rel="noopener noreferrer" class="footer-cta-button">Get in Touch</a>
+        </div>
+        <ul class="footer-links">
+          <li><a href="mailto:contact@nestium.systems">contact@nestium.systems</a></li>
+          <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+          <li>Orbit Station 42, Digital Space</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Nestium Systems. All systems operational.</p>
+      <p>Made with <span style="color: var(--danger);">⚡</span> in the digital cosmos</p>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
+<div class="floating-whatsapp" data-aos="fade-left" data-aos-delay="1200">
+  <a href="https://wa.me/254117960087" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     class="whatsapp-float"
+     aria-label="Chat on WhatsApp">
+    
+    <!-- WhatsApp Icon -->
+    <div class="whatsapp-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.032 2c-5.509 0-9.977 4.468-9.977 9.977 0 1.768.468 3.476 1.346 4.971l-1.427 5.201 5.326-1.401c1.465.8 3.141 1.229 4.894 1.229 5.509 0 9.977-4.468 9.977-9.977s-4.468-9.977-9.977-9.977zm5.443 14.132c-.294.832-1.508 1.522-2.473 1.608-.626.057-1.428.103-4.164-.39-3.592-.643-6.301-3.475-6.497-6.318-.082-1.181.235-2.299.856-3.238.295-.458.674-.798 1.145-1.017.419-.197.935-.157 1.285.142.35.3.487.74.605 1.171.118.43.236.861.27 1.309.035.448-.024.913-.299 1.297-.275.385-.676.65-1.007 1.011-.331.361.071.896.496 1.227 1.207.94 2.684 1.38 4.189 1.569.295.037.59.073.885.073.498 0 .996-.052 1.494-.169.498-.118.944-.385 1.322-.726.379-.341.669-.76.865-1.238.196-.478.246-.997.196-1.515h-.001z"/>
+      </svg>
+    </div>
+    
+    <!-- Pulsing Ring Effect -->
+    <div class="whatsapp-pulse-ring"></div>
+    <div class="whatsapp-pulse-ring delay-1"></div>
+    
+    <!-- Tooltip/Bubble -->
+    <div class="whatsapp-tooltip">
+      <span>Chat with me</span>
+      <div class="tooltip-arrow"></div>
+    </div>
+    
+    <!-- Status Indicator -->
+    <div class="whatsapp-status">
+      <span class="status-dot"></span>
+      <span class="status-text">Online</span>
+    </div>
+  </a>
+</div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js"></script>
+  <script src="assets/js/global.js" defer></script>
+  <script src="assets/js/services.js" defer></script>
+  <script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/pageloader.js" defer></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+   
+  </script>
+</body>
+</html>
