@@ -1,12 +1,5 @@
 /* -------------- RESET -------------- */
 :root {
-  --neon: #39ff14;         /* Neon Green */
-  --electric: #00ffff;     /* Electric Blue */
-  --silver: #c0c0c0;       /* Light Silver */
-  --charcoal: #0e0e10;     /* Deep Charcoal */
-  --soft-black: #161617;   /* Backup dark */
-  --danger: #ff3c38;       /* Optional red for alerts */
-  --orbitron: 'Orbitron';
   --sans-serif: 'sans-serif'
 }
 
@@ -400,21 +393,6 @@ header {
     100% { transform: translateY(-100vh) translateX(100px) rotate(360deg); }
 }
 
-.circuit-connections {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.connection {
-    position: absolute;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--electric), transparent);
-    transform-origin: left center;
-    animation: connectionPulse 6s infinite ease-in-out;
-    filter: drop-shadow(0 0 3px var(--neon));
-}
-
 /* Layer 3 - Foreground Elements */
 .layer-3 {
     z-index: 3;
@@ -437,31 +415,10 @@ header {
     filter: drop-shadow(0 0 2px var(--neon));
 }
 
-.circuit-dots {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.circuit-dot {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: var(--electric);
-    border-radius: 50%;
-    animation: dotPulse 3s infinite alternate;
-    filter: drop-shadow(0 0 5px var(--electric));
-}
-
 /* Animation Keyframes */
 @keyframes gridScroll {
     0% { transform: translateX(0) translateY(0); }
     100% { transform: translateX(-50%) translateY(-50%); }
-}
-
-@keyframes connectionPulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.8; }
 }
 
 @keyframes particleFloat {
@@ -469,11 +426,6 @@ header {
     10% { opacity: 0.8; }
     90% { opacity: 0.8; }
     100% { transform: translateY(-100px) translateX(200px); opacity: 0; }
-}
-
-@keyframes dotPulse {
-    0% { transform: scale(0.8); opacity: 0.4; }
-    100% { transform: scale(1.2); opacity: 0.9; }
 }
 
         /* Hero Section */
@@ -558,227 +510,6 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-}
-
-/* Cyber-Themed Download Button */
-.resume-download-btn {
-    position: relative;
-    width: 14em;
-    height: 4em;
-    background-color: transparent;
-    border: none;
-    font-size: 13px;
-    font-weight: bold;
-    color: var(--neon);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    outline: none;
-    transition: all 0.3s ease;
-    margin: 1rem 0;
-    
-}
-
-.clip {
-    --color: var(--electric);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 3px double var(--color);
-    box-shadow: inset 0px 0px 15px rgba(57, 255, 20, 0.3);
-    clip-path: polygon(
-        30% 0%, 
-        70% 0%, 
-        100% 30%, 
-        100% 70%, 
-        70% 100%, 
-        30% 100%, 
-        0% 70%, 
-        0% 30%
-    );
-    transition: all 0.4s ease;
-}
-
-.btn-text {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.arrow {
-    position: absolute;
-    transition: all 0.3s ease;
-    background-color: var(--electric);
-    top: 35%;
-    width: 11%;
-    height: 30%;
-}
-
-.right-arrow {
-    clip-path: polygon(100% 49%, 0 0, 0 100%);
-    left: 102%;
-}
-
-.left-arrow {
-    clip-path: polygon(100% 0, 100% 100%, 0 50%);
-    left: -13.5%;
-}
-
-.corner {
-    position: absolute;
-    width: 4em;
-    height: 4em;
-    background-color: var(--electric);
-    box-shadow: inset 1px 1px 8px rgba(0, 212, 255, 0.6);
-    transform: scale(1) rotate(45deg);
-    transition: all 0.3s ease;
-}
-
-.left-top {
-    top: -1.96em;
-    left: -3em;
-}
-
-.right-top {
-    top: -1.98em;
-    left: 91%;
-}
-
-.left-bottom {
-    top: 2.1em;
-    left: -2.15em;
-}
-
-.right-bottom {
-    top: 45%;
-    left: 88%;
-}
-
-.download-icon {
-    position: relative;
-    z-index: 2;
-    margin-left: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-/* Hover Effects */
-.resume-download-btn:hover {
-    color: var(--neon);
-    text-shadow: 0 0 5px var(--neon);
-}
-
-.resume-download-btn:hover .clip {
-    --color: var(--neon);
-    box-shadow: inset 0px 0px 25px rgba(57, 255, 20, 0.5);
-    border: 3px double var(--neon);
-    animation: pulse-glow 1.5s infinite alternate;
-}
-
-.resume-download-btn:hover .right-arrow {
-    background-color: var(--neon);
-    left: -15%;
-    animation: right-arrow-move 0.6s ease-in-out infinite alternate;
-}
-
-.resume-download-btn:hover .left-arrow {
-    background-color: var(--neon);
-    left: 103%;
-    animation: left-arrow-move 0.6s ease-in-out infinite alternate;
-}
-
-.resume-download-btn:hover .corner {
-    transform: scale(1.25) rotate(45deg);
-    background-color: var(--neon);
-    box-shadow: inset 1px 1px 10px rgba(57, 255, 20, 0.8);
-}
-
-.resume-download-btn:hover .left-top {
-    animation: corner-glow 0.1s ease-in-out 0.05s both,
-               corner-light 0.2s linear 0.4s both;
-}
-
-.resume-download-btn:hover .right-top {
-    animation: corner-glow 0.1s ease-in-out 0.15s both,
-               corner-light 0.2s linear 0.4s both;
-}
-
-.resume-download-btn:hover .right-bottom {
-    animation: corner-glow 0.1s ease-in-out 0.25s both,
-               corner-light 0.2s linear 0.4s both;
-}
-
-.resume-download-btn:hover .left-bottom {
-    animation: corner-glow 0.1s ease-in-out 0.35s both,
-               corner-light 0.2s linear 0.4s both;
-}
-
-.resume-download-btn:hover .download-icon {
-    transform: translateY(5px);
-    filter: drop-shadow(0 0 2px var(--neon));
-}
-
-/* Animations */
-@keyframes pulse-glow {
-    from {
-        box-shadow: inset 0px 0px 15px rgba(57, 255, 20, 0.3),
-                    0 0 10px rgba(57, 255, 20, 0.2);
-    }
-    to {
-        box-shadow: inset 0px 0px 25px rgba(57, 255, 20, 0.6),
-                    0 0 20px rgba(57, 255, 20, 0.4);
-    }
-}
-
-@keyframes right-arrow-move {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-10px);
-    }
-}
-
-@keyframes left-arrow-move {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(10px);
-    }
-}
-
-@keyframes corner-glow {
-    from {
-        background-color: var(--electric);
-    }
-    to {
-        background-color: var(--neon);
-    }
-}
-
-@keyframes corner-light {
-    from {
-        box-shadow: 1px 1px 10px var(--neon);
-    }
-    to {
-        box-shadow: 0 0 5px var(--neon);
-    }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .resume-download-btn {
-        width: 12em;
-        font-size: 11px;
-    }
 }
 
 
@@ -2406,7 +2137,7 @@ header {
 .fd-dot--warn { background: #ffbd2e; }
 .fd-dot--off  { background: rgba(255,255,255,0.2); }
 
-/* Property list (NestRental) */
+/* Property list (LumidahRentals) */
 .fd-prop-list { display: flex; flex-direction: column; gap: 4px; }
 .fd-prop-item { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .fd-prop-item span { flex: 1; color: rgba(255,255,255,0.6); font-size: 0.62rem; }

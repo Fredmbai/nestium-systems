@@ -2,13 +2,6 @@
 
     /* -------------- RESET -------------- */
 :root {
-  --neon: #39ff14;         /* Neon Green */
-  --electric: #00ffff;     /* Electric Blue */
-  --silver: #c0c0c0;       /* Light Silver */
-  --charcoal: #0e0e10;     /* Deep Charcoal */
-  --soft-black: #161617;   /* Backup dark */
-  --danger: #ff3c38;       /* Optional red for alerts */
-  --orbitron: 'Orbitron';
   --sans-serif: 'sans-serif'
 }
 

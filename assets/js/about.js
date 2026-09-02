@@ -5,8 +5,30 @@
         });
 
         // Initialize particles.js
-        particlesJS.load('particles-js', 'particles.json', function() {
-            console.log('Particles loaded!');
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: ['#39ff14', '#00ffff'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 140,
+                    color: '#39ff14',
+                    opacity: 0.25,
+                    width: 1
+                },
+                move: { enable: true, speed: 1.2, out_mode: 'out' }
+            },
+            interactivity: {
+                events: {
+                    onhover: { enable: true, mode: 'grab' },
+                    onclick: { enable: false }
+                },
+                modes: { grab: { distance: 140, line_linked: { opacity: 0.5 } } }
+            },
+            retina_detect: true
         });
 
         // Simple parallax effect
@@ -54,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isPlaying) {
                 typewriterSound.currentTime = 0;
                 typewriterSound.volume = 0.3;
-                typewriterSound.play().catch(e => console.log("Audio play prevented:", e));
+                typewriterSound.play().catch(() => {});
                 isPlaying = true;
                 
                 // Randomize sound playback for natural effect
@@ -136,14 +158,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const scrollPosition = window.pageYOffset;
         const joinSection = document.querySelector('.join-section');
-        const joinContent = document.querySelector('.join-content');
-        
+
         // Background parallax
         joinSection.style.backgroundPositionY = `${scrollPosition * 0.4}px`;
-        
-        // Content movement
-        joinContent.style.transform = `translateY(${scrollPosition * 0.1}px)`;
-        
+
         // Particle movement
         const particles = document.querySelectorAll('.particle');
         particles.forEach(particle => {

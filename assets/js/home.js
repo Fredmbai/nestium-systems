@@ -45,8 +45,6 @@
 // DOM READY INITIALIZATIONS
 // =============================
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM loaded");
-
   // -------------------------
   // CTA STARS
   // -------------------------

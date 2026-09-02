@@ -83,19 +83,6 @@
 
 // Enhanced JavaScript for dynamic elements
 document.addEventListener('DOMContentLoaded', function() {
-    // Generate circuit grid connections
-    const connections = document.querySelector('.circuit-connections');
-    for (let i = 0; i < 15; i++) {
-        const connection = document.createElement('div');
-        connection.className = 'connection';
-        connection.style.width = `${Math.random() * 200 + 100}px`;
-        connection.style.top = `${Math.random() * 100}%`;
-        connection.style.left = `${Math.random() * 100}%`;
-        connection.style.transform = `rotate(${Math.random() * 360}deg)`;
-        connection.style.animationDelay = `${Math.random() * 6}s`;
-        connections.appendChild(connection);
-    }
-
     // Generate floating cubes
     const cubeContainer = document.querySelector('.floating-cubes');
     for (let i = 0; i < 8; i++) {
@@ -128,17 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
         particles.appendChild(particle);
     }
 
-    // Generate circuit dots
-    const circuitDots = document.querySelector('.circuit-dots');
-    for (let i = 0; i < 25; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'circuit-dot';
-        dot.style.top = `${Math.random() * 100}%`;
-        dot.style.left = `${Math.random() * 100}%`;
-        dot.style.animationDelay = `${Math.random() * 3}s`;
-        circuitDots.appendChild(dot);
-    }
-
     // Parallax effect on scroll
     window.addEventListener('scroll', function() {
         const scrollY = window.scrollY;
@@ -146,9 +122,4 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.layer-2').style.transform = `translateY(${scrollY * 0.4}px)`;
         document.querySelector('.layer-3').style.transform = `translateY(${scrollY * 0.6}px)`;
     });
-});
-
-document.querySelector('.resume-download-btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.open(this.href + '#toolbar=0&navpanes=0', '_blank');
 });

@@ -1,12 +1,5 @@
 /* -------------- RESET -------------- */
 :root {
-  --neon: #39ff14;         /* Neon Green */
-  --electric: #00ffff;     /* Electric Blue */
-  --silver: #c0c0c0;       /* Light Silver */
-  --charcoal: #0e0e10;     /* Deep Charcoal */
-  --soft-black: #161617;   /* Backup dark */
-  --danger: #ff3c38;       /* Optional red for alerts */
-  --orbitron: 'Orbitron';
   --sans-serif: 'sans-serif'
 }
 
@@ -3322,6 +3315,10 @@ button:active,
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+}
+
+.wwd-card--wide {
+  grid-column: 1 / -1;
 }
 
 /* ---------- Individual Card ---------- */

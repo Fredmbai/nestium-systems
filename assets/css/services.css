@@ -737,6 +737,15 @@ header {
   overflow: hidden;
 }
 
+/* Override the inline-block left/transform pattern from old .section-title —
+   AOS's own transform (from data-aos="fade-up") overrides it once animated in,
+   which drops the centering and leaves the title flush right. */
+.why-choose .section-title {
+  left: auto;
+  transform: none;
+  display: block;
+}
+
 .why-choose::before {
   content: '';
   position: absolute;
@@ -1588,11 +1597,13 @@ header {
 .svc-icon--app   { color: #9b59ff;         background: rgba(155,89,255,0.08) !important; border-color: rgba(155,89,255,0.5) !important; }
 .svc-icon--ai    { color: var(--neon);     background: rgba(57,255,20,0.08) !important;  border-color: rgba(57,255,20,0.5) !important; }
 .svc-icon--cyber { color: var(--danger);   background: rgba(255,60,56,0.08) !important;  border-color: rgba(255,60,56,0.5) !important; }
+.svc-icon--hosting { color: #f5a623;       background: rgba(245,166,35,0.08) !important; border-color: rgba(245,166,35,0.5) !important; }
 
 .service-card:hover .svc-icon--web   { box-shadow: 0 0 24px rgba(0,255,255,0.4) !important; background: rgba(0,255,255,0.14) !important; }
 .service-card:hover .svc-icon--app   { box-shadow: 0 0 24px rgba(155,89,255,0.4) !important; background: rgba(155,89,255,0.14) !important; }
 .service-card:hover .svc-icon--ai    { box-shadow: 0 0 24px rgba(57,255,20,0.4) !important;  background: rgba(57,255,20,0.14) !important; }
 .service-card:hover .svc-icon--cyber { box-shadow: 0 0 24px rgba(255,60,56,0.4) !important;  background: rgba(255,60,56,0.14) !important; }
+.service-card:hover .svc-icon--hosting { box-shadow: 0 0 24px rgba(245,166,35,0.4) !important; background: rgba(245,166,35,0.14) !important; }
 
 /* Card front text */
 .service-card h3 {
@@ -1649,12 +1660,14 @@ header {
 .svc-back--app   .svc-back-accent { background: linear-gradient(90deg, #9b59ff, rgba(155,89,255,0.3)); }
 .svc-back--ai    .svc-back-accent { background: linear-gradient(90deg, var(--neon), rgba(57,255,20,0.3)); }
 .svc-back--cyber .svc-back-accent { background: linear-gradient(90deg, var(--danger), rgba(255,60,56,0.3)); }
+.svc-back--hosting .svc-back-accent { background: linear-gradient(90deg, #f5a623, rgba(245,166,35,0.3)); }
 
 /* Themed back border glow */
 .svc-back--web   { border-color: rgba(0,255,255,0.35) !important;  box-shadow: 0 0 30px rgba(0,255,255,0.1) !important; }
 .svc-back--app   { border-color: rgba(155,89,255,0.35) !important; box-shadow: 0 0 30px rgba(155,89,255,0.1) !important; }
 .svc-back--ai    { border-color: rgba(57,255,20,0.35) !important;  box-shadow: 0 0 30px rgba(57,255,20,0.1) !important; }
 .svc-back--cyber { border-color: rgba(255,60,56,0.35) !important;  box-shadow: 0 0 30px rgba(255,60,56,0.1) !important; }
+.svc-back--hosting { border-color: rgba(245,166,35,0.35) !important; box-shadow: 0 0 30px rgba(245,166,35,0.1) !important; }
 
 .svc-back-header {
   display: flex;
@@ -1719,6 +1732,7 @@ header {
 .svc-back--app   .service-features li::before { color: #9b59ff; }
 .svc-back--ai    .service-features li::before { color: var(--neon); }
 .svc-back--cyber .service-features li::before { color: var(--danger); }
+.svc-back--hosting .service-features li::before { color: #f5a623; }
 
 /* Stack tags row at bottom */
 .svc-stack-row {
@@ -1739,6 +1753,7 @@ header {
 .svc-back--app   .svc-stack-row span { border: 1px solid rgba(155,89,255,0.25);  color: rgba(155,89,255,0.7);   background: rgba(155,89,255,0.05); }
 .svc-back--ai    .svc-stack-row span { border: 1px solid rgba(57,255,20,0.25);   color: rgba(57,255,20,0.7);    background: rgba(57,255,20,0.05); }
 .svc-back--cyber .svc-stack-row span { border: 1px solid rgba(255,60,56,0.25);   color: rgba(255,80,70,0.7);    background: rgba(255,60,56,0.05); }
+.svc-back--hosting .svc-stack-row span { border: 1px solid rgba(245,166,35,0.25); color: rgba(245,166,35,0.75);  background: rgba(245,166,35,0.05); }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
@@ -1771,6 +1786,14 @@ header {
 .lifecycle-header {
   text-align: center;
   margin-bottom: 3.5rem;
+}
+
+/* Override the inline-block left/transform pattern from old .section-title —
+   this header already centers via text-align, so the hack double-offsets it. */
+.lifecycle-header .section-title {
+  left: auto;
+  transform: none;
+  display: block;
 }
 
 .lifecycle-eyebrow {
