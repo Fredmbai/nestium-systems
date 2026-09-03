@@ -91,6 +91,71 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
   // -------------------------
+  // DEV CONSOLE ROLE TYPEWRITER
+  // -------------------------
+  (function devConsoleTypewriter() {
+    const el = document.getElementById('dcRoleText');
+    if (!el) return;
+
+    const roles = ['Software Developer', 'Cybersecurity Enthusiast', 'Problem Solver'];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function tick() {
+      const current = roles[roleIndex];
+      el.textContent = deleting
+        ? current.slice(0, charIndex--)
+        : current.slice(0, charIndex++);
+
+      let delay = deleting ? 40 : 70;
+
+      if (!deleting && charIndex === current.length + 1) {
+        deleting = true;
+        delay = 1400;
+      } else if (deleting && charIndex === -1) {
+        deleting = false;
+        charIndex = 0;
+        roleIndex = (roleIndex + 1) % roles.length;
+        delay = 300;
+      }
+
+      setTimeout(tick, delay);
+    }
+    tick();
+  })();
+
+  // -------------------------
+  // ECOSYSTEM ORBIT — tap-to-reveal tooltip
+  // (touch devices have no :hover, so a tap toggles the label instead)
+  // -------------------------
+  (function orbitTapTooltips() {
+    const items = document.querySelectorAll('.orbit-item');
+    if (!items.length) return;
+
+    items.forEach(item => {
+      item.addEventListener('click', (e) => {
+        const wasActive = item.classList.contains('tt-active');
+        items.forEach(i => i.classList.remove('tt-active'));
+        if (!wasActive) item.classList.add('tt-active');
+        e.stopPropagation();
+      });
+
+      // role="button" on a <div> gets no native Enter/Space activation — wire it up
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          item.click();
+        }
+      });
+    });
+
+    document.addEventListener('click', () => {
+      items.forEach(i => i.classList.remove('tt-active'));
+    });
+  })();
+
+  // -------------------------
   // NAV MENUS
   // -------------------------
   (function navMenus() {
@@ -168,17 +233,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    gsap.to(".orbit-item", {
-      y: (i) => (i % 2 === 0 ? -20 : 20),
-      rotation: (i) => (i % 2 === 0 ? 5 : -5),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".orbit-ring",
-        start: "top 80%",
-        end: "bottom 20%",
-        scrub: true
-      }
-    });
+    // Skipped under reduced motion — orbit items are laid out statically
+    // there (see the DOMContentLoaded block below) and shouldn't bob on scroll.
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.to(".orbit-item", {
+        y: (i) => (i % 2 === 0 ? -20 : 20),
+        rotation: (i) => (i % 2 === 0 ? 5 : -5),
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".orbit-ring",
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: true
+        }
+      });
+    }
 
     gsap.to(".project-card", {
       rotationY: 5,

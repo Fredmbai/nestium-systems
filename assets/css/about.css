@@ -899,6 +899,82 @@ header {
     }
 }
 
+/* Team Section */
+.team-section {
+    padding: 6rem 2rem;
+    background: var(--charcoal);
+    text-align: center;
+    position: relative;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-eyebrow {
+    display: block;
+    font-family: var(--orbitron), monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    color: var(--electric);
+    opacity: 0.7;
+    margin-bottom: 0.9rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.team-card {
+    background: rgba(20, 20, 25, 0.8);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1);
+    border-color: var(--electric);
+}
+
+.team-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    color: var(--electric);
+    background: rgba(0, 255, 255, 0.08);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.team-card h3 {
+    color: var(--electric);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.team-card p {
+    color: var(--silver);
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Brand DNA Section */
 .brand-dna {
     padding: 6rem 2rem;

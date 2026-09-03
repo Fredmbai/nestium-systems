@@ -547,30 +547,12 @@ header {
   font-family: var(--sans-serif);
 }
 
-.about-image {
+.about-visual {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.about-image img {
-  width: 320px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10%;
-  border: 2px solid var(--neon);
-  box-shadow: 
-    0 0 30px rgba(57, 255, 20, 0.3),
-    0 0 60px rgba(57, 255, 20, 0.2);
-  transition: all 0.3s ease;
-}
-
-.about-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 
-    0 0 40px rgba(57, 255, 20, 0.4),
-    0 0 80px rgba(57, 255, 20, 0.3);
+  width: 100%;
 }
 
 /* Simple animations */
@@ -579,8 +561,147 @@ header {
   50% { transform: translateY(-8px); }
 }
 
-.about-image img {
+/* ---------- Developer Status Console ---------- */
+.dev-console {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(16, 16, 18, 0.85);
+  border: 1px solid rgba(57, 255, 20, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.08), 0 20px 50px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
   animation: subtle-float 6s ease-in-out infinite;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dev-console:hover {
+  border-color: rgba(57, 255, 20, 0.5);
+  box-shadow: 0 0 40px rgba(57, 255, 20, 0.15), 0 25px 60px rgba(0, 0, 0, 0.45);
+  transform: translateY(-4px);
+}
+
+.dc-titlebar {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 1.1rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(57, 255, 20, 0.15);
+}
+
+.dc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.35rem;
+}
+.dc-dot--r { background: #ff5f57; }
+.dc-dot--y { background: #febc2e; }
+.dc-dot--g { background: #28c840; }
+
+.dc-path {
+  margin-left: 0.6rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: rgba(192, 192, 192, 0.6);
+}
+
+.dc-body {
+  padding: 1.6rem 1.5rem 1.8rem;
+  font-family: 'Courier New', monospace;
+}
+
+.dc-line {
+  color: rgba(192, 192, 192, 0.65);
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+.dc-prompt {
+  color: var(--neon);
+  margin-right: 0.4rem;
+}
+
+.dc-role {
+  min-height: 2.2rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--electric);
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.35);
+  margin-bottom: 1.4rem;
+}
+
+.dc-cursor {
+  display: inline-block;
+  color: var(--neon);
+  animation: dcBlink 1s step-end infinite;
+}
+@keyframes dcBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.dc-status-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--silver);
+  padding-top: 1.1rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+}
+
+.dc-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--neon);
+  box-shadow: 0 0 8px var(--neon);
+  animation: dcPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes dcPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.dc-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.dc-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: rgba(192, 192, 192, 0.7);
+}
+.dc-meta-item svg { color: var(--electric); flex-shrink: 0; }
+
+.dc-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dc-chip {
+  font-family: var(--orbitron), sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  color: rgba(57, 255, 20, 0.75);
+  background: rgba(57, 255, 20, 0.04);
+  transition: all 0.25s ease;
+}
+.dev-console:hover .dc-chip {
+  border-color: rgba(57, 255, 20, 0.4);
+  color: var(--neon);
 }
 
 /* ----- Media Queries ----- */
@@ -638,9 +759,12 @@ header {
     font-size: 1rem;
   }
 
-  .about-image img {
-    width: 240px;
-    height: 240px;
+  .dev-console {
+    max-width: 100%;
+  }
+
+  .dc-role {
+    font-size: 1.15rem;
   }
 }
 /* = HERO SOCIAL LINKS ======= */
@@ -991,6 +1115,41 @@ header {
 
 .orbit-item:hover .tooltip {
   opacity: 1;
+}
+
+/* Keyboard focus + tap (touch devices have no hover) also reveal the tooltip */
+.orbit-item:focus-visible .tooltip,
+.orbit-item.tt-active .tooltip {
+  opacity: 1;
+}
+
+.orbit-item:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 4px;
+}
+
+/* Text fallback for the tech list — always readable, no hover/tap required.
+   Hidden from screen readers since each orbit item already carries its own
+   aria-label; this is a visual-only convenience for anyone who'd rather
+   scan a line of text than chase a spinning icon. */
+.orbit-legend {
+  margin: 2.5rem auto 0;
+  max-width: 640px;
+  font-family: var(--orbitron), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  line-height: 2;
+  color: rgba(192, 192, 192, 0.45);
+  text-transform: uppercase;
+}
+
+/* Respect reduced-motion preferences: freeze each item in place rather than
+   removing the animation outright, which would collapse them to the center. */
+@media (prefers-reduced-motion: reduce) {
+  .orbit-item-outer,
+  .orbit-item-inner {
+    animation-play-state: paused;
+  }
 }
 
 /* Responsive Design */
@@ -2653,7 +2812,7 @@ header {
   transform: translateY(-6px) scale(1.1) !important;
 }
 
-/* ======= ABOUT IMAGE SECTION (hero2) ======= */
+/* ======= ABOUT SECTION (hero2) ======= */
 .about-text h2 {
   font-size: clamp(1.6rem, 3.5vw, 2.5rem);
   letter-spacing: -0.01em;
@@ -2664,17 +2823,6 @@ header {
   font-size: clamp(0.92rem, 1.8vw, 1.05rem);
   line-height: 1.8;
   color: rgba(192, 192, 192, 0.85);
-}
-
-.about-image img {
-  animation: subtleFloat 7s ease-in-out infinite;
-  border-radius: 12px;
-  border: 1px solid rgba(57, 255, 20, 0.3);
-}
-
-@keyframes subtleFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
 }
 
 /* ======= SCROLLBAR FOR SECTION CONTAINERS ======= */
@@ -2800,10 +2948,15 @@ button:active,
   margin: 0 auto;
 }
 
-/* ── Carousel wrapper: fixed height + visible overflow so cards aren't clipped ── */
+/* ── Carousel wrapper: fixed height + visible overflow so cards aren't clipped ──
+   margin-top clears the section header: the 3D cards scale up visually as
+   they rotate toward the viewer (translateZ + perspective), so at their
+   closest point they extend well above the wrapper's own box and were
+   overlapping the title. */
 .carousel-wrapper-2-0 {
   height: 490px !important;
   padding-top: 0 !important;
+  margin-top: 150px !important;
   overflow: visible !important;
 }
 
