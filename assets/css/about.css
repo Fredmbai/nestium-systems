@@ -959,8 +959,18 @@ header {
 
 .team-card h3 {
     color: var(--electric);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.3rem;
     font-size: 1.2rem;
+}
+
+.team-role {
+    display: block;
+    font-family: var(--orbitron), monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(192, 192, 192, 0.5);
+    margin-bottom: 1rem;
 }
 
 .team-card p {
